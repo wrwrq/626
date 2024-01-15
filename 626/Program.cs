@@ -135,6 +135,37 @@ public class Solutionkata
         }
         return n;
     }
+    public int solution15(int n)
+    {
+
+        for (int i = 1; i < n; i++)
+        {
+            if (n % i == 1)
+            {
+                return i;
+            }
+        }
+        return 0;
+    }
+    public long[] solution16(int x, int n)
+    {
+        long[] answer = new long[n];
+        for (long i = 1; i <= n; i++)
+        {
+            answer[i - 1] = x * i;
+        }
+        return answer;
+    }
+    public int[] solution17(long n)
+    {
+        string temp = n.ToString();
+        int[] answer = new int[temp.Length];
+        for (int i = 0; i < temp.Length; i++)
+        {
+            answer[i] = int.Parse(temp[temp.Length - i - 1].ToString());
+        }
+        return answer;
+    }
 }
 internal class Program
 {
