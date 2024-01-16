@@ -166,6 +166,48 @@ public class Solutionkata
         }
         return answer;
     }
+    public int solution18(string s)
+    {
+        return int.Parse(s);
+    }
+    public long solution19(long n)
+    {
+        for (long i = 1; i <= n; i++)
+        {
+            if (i * i == n)
+            {
+                return (i + 1) * (i + 1);
+            }
+        }
+        return -1;
+    }
+    public long solution20(long n)
+    {
+        string temp = n.ToString();
+        int[] longint = new int[temp.Length];
+        for (int i = 0; i < temp.Length; i++)
+        {
+            longint[i] = int.Parse(temp[i].ToString());
+        }
+        for (int i = longint.Length - 2; i >= 0; i--)
+        {
+            int stemp = i + 1;
+            int ket = longint[i];
+            while (stemp < longint.Length && longint[stemp] > ket)
+            {
+                longint[stemp - 1] = longint[stemp];
+                stemp++;
+            }
+            longint[stemp - 1] = ket;
+        }
+        temp = "";
+        foreach (var item in longint)
+        {
+            temp += item.ToString();
+        }
+        return long.Parse(temp);
+
+    }
 }
 internal class Program
 {
