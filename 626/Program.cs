@@ -208,11 +208,83 @@ public class Solutionkata
         return long.Parse(temp);
 
     }
+    public bool solution21(int x)
+    {
+        string temp = x.ToString();
+        int weee = 0;
+        for (int i = 0; i < temp.Length; i++)
+        {
+            weee += int.Parse(temp[i].ToString());
+        }
+        if (x % weee == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+    public long solution22(long a, long b)
+    {
+        if (a == b)
+        {
+            return a;
+        }
+        long pl = 0;
+        for (long i = (a < b == true ? a : b) + 1; i < (a < b == false ? a : b); i++)
+        {
+            pl += i;
+        }
+        return a + b + pl;
+
+    }
+    public int solution23(long num)
+    {
+        int trypoint = 0;
+        if (num == 1)
+        {
+            return 0;
+        }
+        while (num != 1)
+        {
+            num = num % 2 == 0 ? num / 2 : num * 3 + 1;
+            trypoint++;
+            if (trypoint == 500)
+            {
+                return -1;
+            }
+        }
+        return trypoint;
+    }
 }
 internal class Program
 {
+    public static int solution(int num)
+    {
+        int trypoint = 0;
+        if (num == 1)
+        {
+            return 0;
+        }
+        while (num != 1)
+        {
+            if (num % 2 == 0)
+            {
+                num /= 2;
+                trypoint++;
+            }
+            if (num % 2 != 0 && num != 1)
+            {
+                num = num * 3 + 1;
+                trypoint++;
+            }
+            if (trypoint == 500)
+            {
+                return -1;
+            }
+        }
+        return trypoint;
+    }
     static void Main(string[] args)
     {
-
+        Console.WriteLine(solution(626331));
     }
 }
