@@ -1,5 +1,4 @@
 ﻿using System;
-
 public class Solutionkata
 {
     public int solution(int num1, int num2)
@@ -266,6 +265,29 @@ public class Solutionkata
             }
         }
         return a;
+    }
+    public int[] solution25(int[] arr, int divisor)
+    {
+        List<int> ssss = new List<int>();
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] % divisor == 0)
+            {
+                ssss.Add(arr[i]);
+            }
+        }
+        if (ssss.Count == 0)
+        {
+            return new int[1] { -1 };
+        }
+        ssss.Sort();
+        int[] answer = new int[ssss.Count];
+        for (int i = 0; i < ssss.Count; i++)
+        {
+            answer[i] = ssss[i];
+        }
+        return answer;
     }
 }
 internal class Program
