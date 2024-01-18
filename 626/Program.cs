@@ -254,37 +254,25 @@ public class Solutionkata
         }
         return trypoint;
     }
+    public string solution24(string[] seoul)
+    {
+        string a = "김서방은 ";
+        string c = "에 있다";
+        for (int i = 0; i < seoul.Length; i++)
+        {
+            if (seoul[i] == "Kim")
+            {
+                return a + i + c;
+            }
+        }
+        return a;
+    }
 }
 internal class Program
 {
-    public static int solution(int num)
-    {
-        int trypoint = 0;
-        if (num == 1)
-        {
-            return 0;
-        }
-        while (num != 1)
-        {
-            if (num % 2 == 0)
-            {
-                num /= 2;
-                trypoint++;
-            }
-            if (num % 2 != 0 && num != 1)
-            {
-                num = num * 3 + 1;
-                trypoint++;
-            }
-            if (trypoint == 500)
-            {
-                return -1;
-            }
-        }
-        return trypoint;
-    }
+
     static void Main(string[] args)
     {
-        Console.WriteLine(solution(626331));
+
     }
 }
