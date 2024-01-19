@@ -289,12 +289,92 @@ public class Solutionkata
         }
         return answer;
     }
+    public int solution26(int[] absolutes, bool[] signs)
+    {
+        for (int i = 0; i < signs.Length; i++)
+        {
+            if (signs[i] == false)
+            {
+                absolutes[i] = -(absolutes[i]);
+            }
+        }
+        int answer = 0;
+        foreach (var item in absolutes)
+        {
+            answer += item;
+        }
+        return answer;
+    }
+    public string solution27(string phone_number)
+    {
+        string answer = "";
+        for (int i = 0; i < phone_number.Length - 4; i++)
+        {
+            answer += "*";
+        }
+        for (int p = phone_number.Length - 4; p < phone_number.Length; p++)
+        {
+            answer += phone_number[p];
+        }
+        return answer;
+    }
+    public int solution28(int[] numbers)
+    {
+        int answer = 0;
+        for (int i = 0; i <= 9; i++)
+        {
+            if (numbers.All(a => a != i))
+            {
+                answer += i;
+            }
+        }
+        return answer;
+    }
+    public int[] solution29(int[] arr)
+    {
+        if (arr.Length == 1)
+        {
+            return new int[] { -1 };
+        }
+        int smallIndex = 0;
+        for (int p = 1; p < arr.Length; p++)
+        {
+            if (arr[smallIndex] > arr[p])
+            {
+                smallIndex = p;
+            }
+        }
+        int temp = 0;
+        for (int i = smallIndex + 1; i < arr.Length; i++)
+        {
+            temp = arr[smallIndex];
+            arr[smallIndex] = arr[i];
+            arr[i] = temp;
+            smallIndex++;
+        }
+
+        int[] answer = new int[arr.Length - 1];
+        for (int i = 0; i < answer.Length; i++)
+        {
+            answer[i] = arr[i];
+        }
+        return answer;
+    }
+    public string solution30(string s)
+    {
+        string answer = "";
+        answer = s.Length % 2 == 0 ? s[s.Length / 2 - 1].ToString() + s[s.Length / 2].ToString() : s[s.Length / 2].ToString();
+        return answer;
+    }
 }
+
 internal class Program
 {
 
     static void Main(string[] args)
     {
+        string s = "2w";
+        string answer;
 
     }
 }
