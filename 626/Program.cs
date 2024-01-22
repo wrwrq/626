@@ -366,15 +366,32 @@ public class Solutionkata
         answer = s.Length % 2 == 0 ? s[s.Length / 2 - 1].ToString() + s[s.Length / 2].ToString() : s[s.Length / 2].ToString();
         return answer;
     }
+    public string solution31(int n)
+    {
+        string answer = "";
+        for (int i = 0; i < n; i++)
+        {
+            answer += i % 2 == 0 ? "수" : "박";
+        }
+        return answer;
+    }
+    public int solution32(int[] a, int[] b)
+    {
+        int answer = 0;
+        for (int i = 0; i < a.Length; i++)
+        {
+            answer += a[i] * b[i];
+        }
+        return answer;
+    }
 }
 
 internal class Program
 {
-
     static void Main(string[] args)
     {
-        string s = "2w";
-        string answer;
+        string test = "abzcDA";
 
-    }
+        Console.WriteLine(test);
+    } 
 }
