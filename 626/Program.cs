@@ -384,14 +384,19 @@ public class Solutionkata
         }
         return answer;
     }
+    public string solution33(string s)
+    {
+        char[] temp = s.ToCharArray();
+        Array.Sort(temp);
+        Array.Reverse(temp);
+        return s = new string(temp);
+    }
 }
 
 internal class Program
 {
     static void Main(string[] args)
     {
-        string test = "abzcDA";
 
-        Console.WriteLine(test);
     } 
 }
