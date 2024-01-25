@@ -391,6 +391,23 @@ public class Solutionkata
         Array.Reverse(temp);
         return s = new string(temp);
     }
+    public string solution34(string s)
+    {
+        char[] temp = s.ToCharArray();
+        Array.Sort(temp);
+        Array.Reverse(temp);
+        return s = new string(temp);
+    }
+
+    //35 스킵
+    public bool solution36(string s)
+    {
+        if (s.Length == 4 || s.Length == 6)
+        {
+            return int.TryParse(s, out int w);
+        }
+        return false;
+    }
 }
 
 internal class Program
