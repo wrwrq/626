@@ -408,6 +408,63 @@ public class Solutionkata
         }
         return false;
     }
+    public int[,] solution37(int[,] arr1, int[,] arr2)
+    {
+        for (int i = 0; i < arr1.GetLength(0); i++)
+        {
+            for (int p = 0; p < arr1.GetLength(1); p++)
+            {
+                arr1[i, p] += arr2[i, p];
+            }
+        }
+        return arr1;
+    }
+    public int[] solution38(int n, int m)
+    {
+        int a = 0;
+        if (n < m)
+        {
+            for (int i = 1; i <= n; i++) //내림으로 하면 더 빠를듯
+            {
+                if (n % i == 0 && m % i == 0)
+                {
+                    a = i;
+                }
+            }
+        }
+        else
+        {
+            for (int i = 1; i <= m; i++)
+            {
+                if (n % i == 0 && m % i == 0)
+                {
+                    a = i;
+                }
+            }
+        }
+        int b = 0;
+        int c = 0;
+        if (n < m)
+        {
+            c = m;
+        }
+        else
+        {
+            c = n;
+        }
+        while (true)
+        {
+            if (c % m == 0 && c % n == 0)
+            {
+                b = c;
+                break;
+            }
+            c++;
+        }
+
+        int[] answer = new int[] { a, b };
+        return answer;
+    }
 }
 
 internal class Program
@@ -415,5 +472,26 @@ internal class Program
     static void Main(string[] args)
     {
 
+
+
+
+        //public static void main() 38
+        //{
+        //    string[] s;
+
+        //    console.clear();
+        //    s = console.readline().split(' ');
+
+        //    int a = int32.parse(s[0]);
+        //    int b = int32.parse(s[1]);
+        //    for (int i = 0; i < b; i++)
+        //    {
+        //        for (int pe = 0; pe < a; pe++)
+        //        {
+        //            console.write("*");
+        //        }
+        //        console.writeline("");
+        //    }
+        //}
     } 
 }
