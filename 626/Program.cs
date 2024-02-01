@@ -1,4 +1,7 @@
-﻿using System;
+﻿using System.Numerics;
+using System.Text;
+using System.Globalization;
+
 public class Solutionkata
 {
     public int solution(int num1, int num2)
@@ -419,7 +422,7 @@ public class Solutionkata
         }
         return arr1;
     }
-    public int[] solution38(int n, int m)
+    public int[] solution39(int n, int m)
     {
         int a = 0;
         if (n < m)
@@ -465,15 +468,92 @@ public class Solutionkata
         int[] answer = new int[] { a, b };
         return answer;
     }
+    //40 스킵
+    public string solution41(string s)
+    {
+        int w = 0;
+        for (int i = 0; i < s.Length; i++)
+        {
+            if (s[i] == ' ')
+            {
+                w++;
+            }
+        }
+        string[] temp = new string[w];
+        temp = s.Split(' ');
+        string answer = "";
+        foreach (var item in temp)
+        {
+            for (int i = 0; i < item.Length; i++)
+            {
+                int a = i + 1;
+                if (a % 2 != 0)
+                {
+                    answer += item[i].ToString().ToUpper();
+                }
+                else
+                {
+                    answer += item[i].ToString().ToLower();
+                }
+            }
+            answer += " ";
+        }
+        answer = answer.Remove(answer.Length - 1, 1);
+        return answer;
+    }
 }
 
 internal class Program
 {
+
+    public static int solution(int n)
+    {
+        int ththth = 0;
+        string temp = "";
+        string te = "";
+        string t = "";
+        for (int i = 0; i <= n; i++)
+        {
+            te = "3";
+            t = "10";
+            if (i != n)
+            {
+                ththth++;
+            }
+            temp = ththth.ToString();
+            for (int p = 0; p < temp.Length; p++)
+            {
+                temp = ththth.ToString();
+                if (p >= 1)
+                {
+                    te += "0";
+                    t += "0";
+                }
+                int a = int.Parse(temp[temp.Length - p - 1].ToString());
+                if (a > 2)
+                {
+                    ththth -= int.Parse(te);
+                    ththth += int.Parse(t);
+                }
+            }
+        }
+        temp = ththth.ToString();
+        char[] c = temp.ToCharArray();
+        Array.Reverse(c);
+        temp = new string(c);
+        return ththth;
+    }
+
     static void Main(string[] args)
     {
+        string test = "tete aaa";
+        string[] wr = new string[4];
+        wr = test.Split(" ");
 
-
-
+        Console.WriteLine(wr[0]);
+        string assd = "we g";
+        string[] sdga = new string[523];
+        sdga = assd.Split(' ');
 
         //public static void main() 38
         //{
@@ -481,7 +561,6 @@ internal class Program
 
         //    console.clear();
         //    s = console.readline().split(' ');
-
         //    int a = int32.parse(s[0]);
         //    int b = int32.parse(s[1]);
         //    for (int i = 0; i < b; i++)
@@ -493,5 +572,5 @@ internal class Program
         //        console.writeline("");
         //    }
         //}
-    } 
+    }
 }
