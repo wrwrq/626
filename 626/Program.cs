@@ -501,6 +501,24 @@ public class Solutionkata
         answer = answer.Remove(answer.Length - 1, 1);
         return answer;
     }
+    public int solution42(int[] number)
+    {
+        int answer = 0;
+        for (int i = 0; i < number.Length; i++)
+        {
+            for (int p = i + 1; p < number.Length; p++)
+            {
+                for (int u = p + 1; u < number.Length; u++)
+                {
+                    if (number[i] + number[p] + number[u] == 0)
+                    {
+                        answer++;
+                    }
+                }
+            }
+        }
+        return answer;
+    }
 }
 
 internal class Program
@@ -544,17 +562,27 @@ internal class Program
         return ththth;
     }
 
+    public static int solution(string t, string p)
+    {
+        int answer = 0;
+        for (int i = 0; i < t.Length - p.Length; i++)
+        {
+            string temp = "";
+            for (int u = i; u < p.Length + i; u++)
+            {
+                temp += t[u];
+            }
+            if (int.Parse(temp) <= int.Parse(p))
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
+
     static void Main(string[] args)
     {
-        string test = "tete aaa";
-        string[] wr = new string[4];
-        wr = test.Split(" ");
-
-        Console.WriteLine(wr[0]);
-        string assd = "we g";
-        string[] sdga = new string[523];
-        sdga = assd.Split(' ');
-
+        Console.WriteLine(solution("10203", "15"));
         //public static void main() 38
         //{
         //    string[] s;
