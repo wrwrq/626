@@ -519,6 +519,23 @@ public class Solutionkata
         }
         return answer;
     }
+    public static int solution43(string t, string p)
+    {
+        int answer = 0;
+        for (int i = 0; i < t.Length - p.Length; i++)
+        {
+            string temp = "";
+            for (int u = i; u < p.Length + i; u++)
+            {
+                temp += t[u];
+            }
+            if (int.Parse(temp) <= int.Parse(p))
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
 }
 
 internal class Program
@@ -562,27 +579,29 @@ internal class Program
         return ththth;
     }
 
-    public static int solution(string t, string p)
+    public int solution(int[,] sizes)
     {
-        int answer = 0;
-        for (int i = 0; i < t.Length - p.Length; i++)
+        int temp = 0;
+        int tempp = 0;
+        for (int i = 0; i < sizes.GetLength(0); i++)
         {
-            string temp = "";
-            for (int u = i; u < p.Length + i; u++)
+            for (int p = 0; p < sizes.GetLength(1); p++)
             {
-                temp += t[u];
-            }
-            if (int.Parse(temp) <= int.Parse(p))
-            {
-                answer++;
+                if (temp < sizes[i, p] && p == 0)
+                {
+                    temp = sizes[i, p];
+                }
+                if (tempp < sizes[i, p] && p == 1)
+                {
+                    tempp = sizes[i, p];
+                }
             }
         }
-        return answer;
+        return temp * tempp;
     }
-
     static void Main(string[] args)
     {
-        Console.WriteLine(solution("10203", "15"));
+
         //public static void main() 38
         //{
         //    string[] s;
