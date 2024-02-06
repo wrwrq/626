@@ -536,88 +536,32 @@ public class Solutionkata
         }
         return answer;
     }
+    //44
+    public string solution45(string s, int n)
+    {
+        char[] answer = s.ToCharArray();
+        s = "";
+        foreach (var i in answer)
+        {
+            if (i == 32)
+            {
+                s += " ";
+                continue;
+            }
+            if (i - 91 < 0)
+            {
+                s += ((char)(i + n >= 91 ? i + n - 26 : i + n)).ToString();
+                continue;
+            }
+            s += ((char)(i + n >= 123 ? i + n - 26 : i + n)).ToString();
+        }
+        return s;
+    }
 }
 
 internal class Program
 {
-
-    public static int solution(int n)
-    {
-        int ththth = 0;
-        string temp = "";
-        string te = "";
-        string t = "";
-        for (int i = 0; i <= n; i++)
-        {
-            te = "3";
-            t = "10";
-            if (i != n)
-            {
-                ththth++;
-            }
-            temp = ththth.ToString();
-            for (int p = 0; p < temp.Length; p++)
-            {
-                temp = ththth.ToString();
-                if (p >= 1)
-                {
-                    te += "0";
-                    t += "0";
-                }
-                int a = int.Parse(temp[temp.Length - p - 1].ToString());
-                if (a > 2)
-                {
-                    ththth -= int.Parse(te);
-                    ththth += int.Parse(t);
-                }
-            }
-        }
-        temp = ththth.ToString();
-        char[] c = temp.ToCharArray();
-        Array.Reverse(c);
-        temp = new string(c);
-        return ththth;
-    }
-
-    public int solution(int[,] sizes)
-    {
-        int temp = 0;
-        int tempp = 0;
-        for (int i = 0; i < sizes.GetLength(0); i++)
-        {
-            for (int p = 0; p < sizes.GetLength(1); p++)
-            {
-                if (temp < sizes[i, p] && p == 0)
-                {
-                    temp = sizes[i, p];
-                }
-                if (tempp < sizes[i, p] && p == 1)
-                {
-                    tempp = sizes[i, p];
-                }
-            }
-        }
-        return temp * tempp;
-    }
     static void Main(string[] args)
     {
-
-        //public static void main() 38
-        //{
-        //    string[] s;
-
-        //    console.clear();
-        //    s = console.readline().split(' ');
-        //    int a = int32.parse(s[0]);
-        //    int b = int32.parse(s[1]);
-        //    for (int i = 0; i < b; i++)
-        //    {
-        //        for (int pe = 0; pe < a; pe++)
-        //        {
-        //            console.write("*");
-        //        }
-        //        console.writeline("");
-        //    }
-        //}
     }
 }
