@@ -557,6 +557,56 @@ public class Solutionkata
         }
         return s;
     }
+    public int solution46(string s)
+    {
+        string answer = "";
+        string aaa = "";
+        for (int i = 0; i < s.Length; i++)
+        {
+            if (int.TryParse(s[i].ToString(), out int a))
+            {
+                answer += a.ToString();
+            }
+            else
+            {
+                aaa += s[i].ToString();
+                switch (aaa)
+                {
+                    case "zero":
+                        answer += "0"; aaa = "";
+                        break;
+                    case "one":
+                        answer += "1"; aaa = "";
+                        break;
+                    case "two":
+                        answer += "2"; aaa = "";
+                        break;
+                    case "three":
+                        answer += "3"; aaa = "";
+                        break;
+                    case "four":
+                        answer += "4"; aaa = "";
+                        break;
+                    case "five":
+                        answer += "5"; aaa = "";
+                        break;
+                    case "six":
+                        answer += "6"; aaa = "";
+                        break;
+                    case "seven":
+                        answer += "7"; aaa = "";
+                        break;
+                    case "eight":
+                        answer += "8"; aaa = "";
+                        break;
+                    case "nine":
+                        answer += "9"; aaa = "";
+                        break;
+                }
+            }
+        }
+        return int.Parse(answer);
+    }
 }
 
 internal class Program
