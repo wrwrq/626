@@ -607,11 +607,46 @@ public class Solutionkata
         }
         return int.Parse(answer);
     }
+    public string[] solution47(string[] strings, int n)
+    {
+        char[] c = new char[strings.Length];
+        for (int i = 0; i < strings.Length; i++)
+        {
+            c[i] = strings[i][n];
+        }
+        for (int i = 0; i < c.Length; i++)
+        {
+            for (int p = i; p < c.Length; p++)
+            {
+                if (c[i] == c[p])
+                {
+                    if (string.Compare(strings[i], strings[p]) == 1)
+                    {
+                        string temppp = strings[p];
+                        strings[p] = strings[i];
+                        strings[i] = temppp;
+                        continue;
+                    }
+                }
+                else if ((string.Compare(c[i].ToString(), c[p].ToString())) == 1)
+                {
+                    char temp = c[i];
+                    c[i] = c[p];
+                    c[p] = temp;
+                    string tempp = strings[p];
+                    strings[p] = strings[i];
+                    strings[i] = tempp;
+                }
+            }
+        }
+        return strings;
+    }
 }
 
 internal class Program
 {
     static void Main(string[] args)
     {
+        
     }
 }
