@@ -645,8 +645,23 @@ public class Solutionkata
 
 internal class Program
 {
+    public static int[] solution(int[] array, int[,] commands)
+    {
+        int[] temp = new int[commands.GetLength(0)];
+        for (int i = 0; i < commands.GetLength(0); i++)
+        {
+            List<int> t = new List<int>();
+            for (int p = commands[i,0] - 1; p < commands[i,1]; p++)
+            {
+                t.Add(array[p]);
+                t.Sort();
+            }
+            temp[i] = t[commands[i, 2]];
+        }
+        return temp;
+    }
     static void Main(string[] args)
     {
-        
+        Console.WriteLine(solution(new int[] { 1, 5, 2, 6, 3, 7, 4 }, new int[,] { { 2, 5, 3 }, { 4, 4, 1 }, { 1, 7, 3 } }));
     }
 }
