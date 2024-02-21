@@ -656,6 +656,45 @@ public class Solutionkata
         }
         return temp;
     }
+    public int[] solution49(int[] numbers)
+    {
+        List<int> o = new List<int>();
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            for (int p = 0; p < numbers.Length; p++)
+            {
+                if (i == p)
+                {
+                    continue;
+                }
+                int a = numbers[i] + numbers[p];
+                if (!o.Contains(a))
+                {
+                    o.Add(a);
+                }
+            }
+        }
+        o.Sort();
+        return o.ToArray();
+    }
+    public int[] solution50(string s)
+    {
+        List<int> a = new List<int>();
+        for (int i = 0; i < s.Length; i++)
+        {
+            for (int p = i - 1; p > -1; p--)
+            {
+                if (s[i] == s[p])
+                {
+                    a.Add(i - p);
+                    goto A;
+                }
+            }
+            a.Add(-1);
+        A:;
+        }
+        return a.ToArray();
+    }
 }
 
 internal class Program
