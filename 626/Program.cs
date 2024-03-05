@@ -695,6 +695,28 @@ public class Solutionkata
         }
         return a.ToArray();
     }
+    public string solution51(int[] food)
+    {
+        List<int> a = new List<int>();
+        for (int i = 1; i < food.Length; i++)
+        {
+            if (food[i] % 2 != 0)
+            {
+                food[i]--;
+            }
+            for (int p = 0; p < food[i]; p++)
+            {
+                a.Insert((int)(a.Count / 2), i);
+            }
+        }
+        a.Insert(a.Count / 2, 0);
+        string s = "";
+        foreach (var item in a)
+        {
+            s += item.ToString();
+        }
+        return s;
+    }
 }
 
 internal class Program
