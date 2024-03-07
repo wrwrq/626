@@ -402,7 +402,19 @@ public class Solutionkata
         return s = new string(temp);
     }
 
-    //35 스킵
+    public long solution35(long price, long money, long count) //Wait 채점은 통과인데 테스트는 실패 ??
+    {
+        long tryCount = 1;
+        long a = price;
+        while (count != 0)
+        {
+            money -= a;
+            tryCount++;
+            a = price * tryCount;
+            count--;
+        }
+        return money < 0 ? money * -1 : 0;
+    }
     public bool solution36(string s)
     {
         if (s.Length == 4 || s.Length == 6)
@@ -717,7 +729,7 @@ public class Solutionkata
         }
         return s;
     }
-    public static int solution52(int 마트가받는양, int 마트가주는양, int 빈병갯수)
+    public int solution52(int 마트가받는양, int 마트가주는양, int 빈병갯수)
     {
         int 받는양 = 0;
         while (빈병갯수 >= 마트가받는양)
@@ -735,6 +747,6 @@ internal class Program
 {
     static void Main(string[] args)
     {
-
+        
     }
 }
