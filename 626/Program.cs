@@ -717,25 +717,24 @@ public class Solutionkata
         }
         return s;
     }
-}
-
-internal class Program
-{//a개를 가져가면 b개를 주는 마트 n는 가지고 있는
-    public static int solution(int 마트가받는양, int 마트가주는양, int 빈병갯수)
+    public static int solution52(int 마트가받는양, int 마트가주는양, int 빈병갯수)
     {
-        int answer = 0;
-        int f = 0;
+        int 받는양 = 0;
         while (빈병갯수 >= 마트가받는양)
         {
-           answer += 빈병갯수 / 마트가받는양;
+            받는양 += (빈병갯수 / 마트가받는양) * 마트가주는양;
             int 거래한횟수 = 빈병갯수 / 마트가받는양;
             빈병갯수 -= 마트가받는양 * 거래한횟수;
             빈병갯수 += 마트가주는양 * 거래한횟수;
         }
-        return answer;
+        return 받는양;
     }
+}
+
+internal class Program
+{
     static void Main(string[] args)
     {
-        Console.WriteLine(solution(3, 2, 10));//16
+
     }
 }
