@@ -741,12 +741,38 @@ public class Solutionkata
         }
         return 받는양;
     }
+    public int[] solution53(int k, int[] score)
+    {
+        List<int> answer = new List<int>();
+        List<int> asd = new List<int>();
+        for (int i = 0; i < score.Length; i++)
+        {
+            if (i >= k)
+            {
+                for (int p = answer.Count - 1; p > 0; p--)
+                {
+                    if (answer[p] < score[i])
+                    {
+                        answer[p] = score[i];
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                answer.Add(score[i]);
+            }
+            answer.Sort();
+            answer.Reverse();
+            asd.Add(answer[answer.Count - 1]);
+        }
+        return asd.ToArray();
+    }
 }
 
 internal class Program
 {
     static void Main(string[] args)
     {
-        
     }
 }
