@@ -775,6 +775,32 @@ public class Solutionkata
         int[] ar = new int[] { 5, 1, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4 };
         return arr[(ar[a - 1] + (b - 1)) % 7];
     }
+    public string solution55(string[] cards1, string[] cards2, string[] goal)
+    {
+        int bbv = 0;
+        int kn = 0;
+        for (int i = 0; i < goal.Length; i++)
+        {
+            if (bbv < cards1.Length && goal[i] == cards1[bbv])
+            {
+                goal[i] = "";
+                bbv++;
+            }
+            else if (kn < cards2.Length && goal[i] == cards2[kn])
+            {
+                goal[i] = "";
+                kn++;
+            }
+        }
+        foreach (var item in goal)
+        {
+            if (item != "")
+            {
+                return "No";
+            }
+        }
+        return "Yes";
+    }
 }
 
 internal class Program
