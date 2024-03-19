@@ -646,9 +646,7 @@ public class Solutionkata
                     char temp = c[i];
                     c[i] = c[p];
                     c[p] = temp;
-                    string tempp = strings[p];
-                    strings[p] = strings[i];
-                    strings[i] = tempp;
+                    (strings[i], strings[p]) = (strings[p], strings[i]);
                 }
             }
         }
@@ -800,6 +798,20 @@ public class Solutionkata
             }
         }
         return "Yes";
+    }
+    public static int solution56(int k, int m, int[] score)
+    {
+        Array.Sort(score);
+        Array.Reverse(score);
+        int loop = 1;
+        int result = 0;
+        while (loop * m <= score.Length)
+        {
+            int a = score[m * loop - 1];
+            ++loop;
+            result += a * m;
+        }
+        return result;
     }
 }
 
